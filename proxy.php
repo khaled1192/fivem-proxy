@@ -2,7 +2,7 @@
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 
-$data = @file_get_contents("http://176.97.212.148:30120/info.json");
+$data = @file_get_contents("http://176.97.212.148:30120/players.json");
 
 if ($data === FALSE) {
     http_response_code(500);
