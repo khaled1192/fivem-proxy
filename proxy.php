@@ -26,7 +26,9 @@ function fetch($url) {
     return $response;
 }
 
-$info = fetch("http://176.97.212.148:30120/info.json");
+$data = json_decode(file_get_contents("http://176.97.212.148:30120/info.json"), true);
+echo "عدد اللاعبين: " . $data["clients"];
+
 $players = fetch("http://176.97.212.148:30120/players.json");
 
 if ($info === false || $players === false) {
